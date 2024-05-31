@@ -2,7 +2,7 @@ import { DateTime } from "luxon"
 import { list } from "postcss"
 import { CgLogIn } from "react-icons/cg"
 
-const API_KEY = 'f94c10a792bff07abc12ae89116804c2'
+const API_KEY = '9c13668021aaf4c503f847c6d3a94328'
 const BASE_URL = 'https://api.openweathermap.org/data/2.5/'
 
 const getWeatherData = (infoType, searchParams) => {
@@ -23,7 +23,7 @@ const iconUrlFromCode = (icon) =>
 
 
 const formatCurrent = (data) => {
-    const { coords: {lat, lon}, main: {temp, feels_like, temp_min, temp_max, humidity},
+    const { coord: {lat, lon}, main: {temp, feels_like, temp_min, temp_max, humidity},
         name, dt, sys: {country, sunrise, sunset}, weather, wind: {speed}, timezone} = data
 
     const {main: details, icon} = weather[0]
