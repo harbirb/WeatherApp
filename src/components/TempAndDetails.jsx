@@ -4,7 +4,8 @@ import { FiWind } from "react-icons/fi"
 import { GiSunrise, GiSunset } from "react-icons/gi"
 import { MdKeyboardArrowUp, MdKeyboardArrowDown } from "react-icons/md"
 
-const TempAndDetails = ({weather: {details, icon, temp, temp_min, temp_max, sunrise, sunset, speed, humidity, feels_like}}) => {
+const TempAndDetails = ({weather: {details, icon, temp, temp_min, temp_max, sunrise, sunset, speed, humidity, feels_like},
+                         units}) => {
 
     const verticalDetails = [
         {
@@ -23,7 +24,7 @@ const TempAndDetails = ({weather: {details, icon, temp, temp_min, temp_max, sunr
             id: 3,
             Icon: FiWind,
             title: "Wind",
-            value: `${speed.toFixed()} km/h`
+            value: `${speed.toFixed()} ${ units === 'metric' ? 'km/h' : 'm/s'}`
         }
     ]
 
